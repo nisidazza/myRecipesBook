@@ -10,8 +10,8 @@ body {
     margin: 0px;
 }
 
-.big-banner{
-    background-image: url('/public/images/Home_Background.jpg') !important;
+.jumbotron{
+    background-image: url('/images/Home_Background.jpg') !important;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -19,6 +19,8 @@ body {
     height:100%
    }
 
-body {
-    font-family: 'Handlee', cursive;
-}
+   .jumbotron,
+   .navbar {
+       font-family: 'Handlee', cursive;
+   }
+   
