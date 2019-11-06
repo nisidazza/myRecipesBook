@@ -4,7 +4,11 @@
             <div class="card-body p-5">
                 <h1 class="font-weight-light"><u>Recipes List</u></h1>
                 <ul>
-                    <li>{{recipes}}</li>
+                    {{#each recipes}}
+                    <a href='/views/home/{{id}}'>
+                        <li>{{title}}</li>
+                    </a>
+                    {{/each}}
                 </ul>
                 <p class="lead"></p>
                 <p class="lead"></p>
