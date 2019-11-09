@@ -17,13 +17,18 @@ router.get('/', (req, res) => {
 
 router.get('/recipe/:id', (req, res) => {
     let { id } = req.params
+    let recipeInfo
+    let recipeIngredients
     //console.log(id)
     db.getRecipe(id)
         .then(recipe => {
+            recipeInfo = recipe
             db.getIngredients(id)
                 .then(ingredients => {
-                    res.render('recipe', { recipe, ingredients })
-                    console.log(recipe,ingredients)
+                    recipeIngredients = ingredients
+                    res.render('recipe', { recipeInfo, recipeIngredients })
+                    //console.log(recipeInfo)
+                    console.log(recipeIngredients)
                 })
         })
 })
