@@ -16,13 +16,17 @@ router.get('/', (req, res) => {
 })
 
 router.get('/recipe/:id', (req, res) => {
-    let { id } = req.params.id
+    let { id } = req.params
+    //console.log(id)
     db.getRecipe(id)
         .then(recipe => {
-            console.log(recipe)
-            res.render('recipe', {recipe})
-          
+            db.getIngredients(id)
+                .then(ingredients => {
+                    res.render('recipe', { recipe, ingredients })
+                    console.log(recipe,ingredients)
+                })
         })
 })
+
 
 module.exports = router

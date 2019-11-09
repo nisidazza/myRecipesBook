@@ -7,16 +7,24 @@ function getListRecipes(db=connection) {
     .select()
 }
 
-function getRecipe(id, db=connection) {
-    return db.select('recipes.*',' ingredients.name AS ingredient_name', 'recipes_ingredients.quantity AS ingredient_quantity')
+function getIngredients(id, db=connection) {
+    return db.select('ingredients.name AS ingredient_name', 'recipes_ingredients.quantity AS ingredient_quantity')
     .from('recipes')
-    .leftJoin('recipes_ingredients', 'recipes_ingredients.recipe_id', 'recipes.id')
-    .leftJoin('ingredients', 'recipes_ingredients.ingredient_id', 'ingredients.id')
+    .innerJoin('recipes_ingredients', 'recipes_ingredients.recipe_id', 'recipes.id')
+    .innerJoin('ingredients', 'recipes_ingredients.ingredient_id', 'ingredients.id')
+    .where('recipes.id', id)
+}
+
+function getRecipe(id, db=connection) {
+    return db('recipes')
+    .where('id', id).first()
+    
 }
 
 
 
 module.exports = {
     getListRecipes,
-    getRecipe
+    getRecipe,
+    getIngredients
 }
