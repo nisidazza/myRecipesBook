@@ -28,6 +28,47 @@ exports.seed = knex =>
                 },
                 {
                     id: 7,
-                    name: 'vegetable oil',
+                    name: 'extra-vergin olive oil',
                 },
+                {
+                    id: 8,
+                    name: 'chicken or vegetable broth',
+                },
+                {
+                    id: 9,
+                    name: 'onion',
+                },
+                {
+                    id: 10,
+                    name: 'butter',
+                },
+                {
+                    id: 11,
+                    name: 'clove garlic',
+                },
+                {
+                    id: 12,
+                    name: 'mushroom',
+                },
+                {
+                    id: 13,
+                    name: 'parsley',
+                },
+                {
+                    id: 14,
+                    name: 'rice',
+                },
+                {
+                    id: 15,
+                    name: 'white wine',
+                },
+                {
+                    id: 16,
+                    name: 'parmesan',
+                },
+                {
+                    id: 17,
+                    name: 'pepper',
+                },
+
             ]))
