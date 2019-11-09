@@ -8,7 +8,7 @@ function getListRecipes(db=connection) {
 }
 
 function getRecipe(id, db=connection) {
-    return db.select('recipes.*',' ingredients.*')
+    return db.select('recipes.*',' ingredients.name AS ingredient_name', 'recipes_ingredients.quantity AS ingredient_quantity')
     .from('recipes')
     .leftJoin('recipes_ingredients', 'recipes_ingredients.recipe_id', 'recipes.id')
     .leftJoin('ingredients', 'recipes_ingredients.ingredient_id', 'ingredients.id')
