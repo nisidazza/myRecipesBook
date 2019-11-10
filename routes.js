@@ -27,10 +27,34 @@ router.get('/recipe/:id', (req, res) => {
                 .then(ingredients => {
                     recipeIngredients = ingredients
                     res.render('recipe', { recipeInfo, recipeIngredients })
-                    //console.log(recipeInfo)
-                    console.log(recipeIngredients)
+                    // console.log(recipeInfo)
+                    // console.log(recipeIngredients)
                 })
         })
+})
+
+router.get('/addRecipe', (req,res) => {
+    res.render('addRecipe')
+})
+
+router.post('/addRecipe', (req,res) => {
+    let {title} = req.body
+    let {category} = req.body
+    let {link} = req.body
+    let {notes} = req.body
+    db.addRecipe(title,category,link,notes)    
+    .then(newRecipeId => {
+        console.log(newRecipeId)
+        res.redirect(`/recipe/${newRecipeId}`)
+        //db.addIngredients(name)// se esiste gia'?
+        /*.then(() => {            
+            db.linkRecipeIngredients(recipe_id, ingredient_id, quantity)
+            .then(() => {
+                
+            })
+        })
+        */
+    })
 })
 
 

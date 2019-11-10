@@ -1,0 +1,32 @@
+<div>
+  <br>
+  <br>
+  <br>
+  <h5>Add new recipe</h5>
+  <form action="/addRecipe" method="POST">
+    <label for="title">Title:
+      <input type="text" name="title">
+    </label>
+    <br>
+    <label for="category">Category:
+      <select name="category">
+        <option value="sweet">Sweet</option>
+        <option value="savoury">Savoury</option>
+      </select>
+    </label>
+    <br>
+    <label for="link">Link:
+      <input type="text" name="link">
+    </label>
+    <br>
+    <label for="notes">Notes:
+      <input type="text" name="notes">
+    </label>
+    <br>
+    <h6>Ingredients:</h6>
+    <br>
+    <button>Add Ingredient</button>
+    <br>
+    <button type="submit">Save</button>
+  </form>
+</div>
