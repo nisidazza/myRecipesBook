@@ -8,6 +8,11 @@ function getListRecipes(db = connection) {
         .select()
 }
 
+function getListIngredients(db = connection) {
+    return db('ingredients')
+        .select()
+}
+
 function getIngredients(id, db = connection) {
     return db.select('ingredients.name AS ingredient_name', 'recipes_ingredients.quantity AS ingredient_quantity')
         .from('recipes')
@@ -37,13 +42,21 @@ function addIngredients(name, db = connection) {
         .insert({ name })
 }
 
-function linkRecipeIngredients(recipe_id, ingredient_id, quantity, db = connection) {
-    return db('recipes_ingredients')
-        .insert({
-            recipe_id,
-            ingredient_id,
-            quantity
+function linkRecipeIngredients(newRecipeId, ingredient_ids, ingredient_quantities, db = connection) {
+    var newRows = []
+
+    for(var i=0;i<ingredient_ids.length;i++){
+        newRows.push({
+            recipe_id : newRecipeId,
+            ingredient_id : ingredient_ids[i],
+            quantity : ingredient_quantities[i]
         })
+    }
+
+    console.log(newRows)
+
+    return db('recipes_ingredients')
+        .insert(newRows)
 }
 
 module.exports = {
@@ -52,5 +65,6 @@ module.exports = {
     getIngredients,
     addRecipe,
     addIngredients,
-    linkRecipeIngredients
+    linkRecipeIngredients,
+    getListIngredients
 }

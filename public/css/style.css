@@ -20,18 +20,20 @@ div.jumbotron {
     margin-bottom: 0;
    }
 
-   .jumbotron,
-   .navbar {
-       font-family: 'Handlee', cursive;
-   }
+.jumbotron, .navbar {
+    font-family: 'Handlee', cursive;
+}
 
-   div.container.main {
-      padding: 50px 100px;
-   }
+div.container.main {
+    padding: 50px 100px;
+}
 
-   div.card-body.p-5 {
-       background-image: url('/images/paper_texture.jpg');
-       background-size: cover;
-       background-repeat: no-repeat;
-    }
-   
+div.card-body.p-5 {
+    background-image: url('/images/paper_texture.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+ 
+label.nomargin {
+    margin-bottom: 0em
+}

@@ -34,26 +34,31 @@ router.get('/recipe/:id', (req, res) => {
 })
 
 router.get('/addRecipe', (req,res) => {
-    res.render('addRecipe')
+    db.getListIngredients()
+        .then(ingredients => {
+            console.log(ingredients)
+            res.render('addRecipe',{ ingredients })
+        })    
 })
 
 router.post('/addRecipe', (req,res) => {
+    console.log("POST addRecipe");
+    console.log(req.body);
+
     let {title} = req.body
     let {category} = req.body
     let {link} = req.body
     let {notes} = req.body
+    let {ingredient_ids} = req.body
+    let {ingredient_quantities} = req.body
     db.addRecipe(title,category,link,notes)    
-    .then(newRecipeId => {
-        console.log(newRecipeId)
-        res.redirect(`/recipe/${newRecipeId}`)
-        //db.addIngredients(name)// se esiste gia'?
-        /*.then(() => {            
-            db.linkRecipeIngredients(recipe_id, ingredient_id, quantity)
-            .then(() => {
-                
-            })
-        })
-        */
+    .then(newRecipeIdArray => {
+        var newRecipeId = newRecipeIdArray[0]
+        console.log("Recipe Id" + newRecipeId)
+        db.linkRecipeIngredients(newRecipeId, ingredient_ids, ingredient_quantities)
+        .then(() => {
+            res.redirect(`/recipe/${newRecipeId}`)
+        })                
     })
 })
 

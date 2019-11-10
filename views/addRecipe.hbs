@@ -1,8 +1,33 @@
+<script src="js/addRecipe.js"></script>
+
 <div>
   <br>
   <br>
   <br>
-  <h5>Add new recipe</h5>
+  <h5>Add new recipe{{foo}}</h5>
+
+  <!--TODO: MOVE SOMEWHERE ELSE (maybe a template) -->
+  <table id="addNewIngredientTemplate" style="display:none">
+  <tr >
+    <td>
+      <select  name="ingredient_ids">
+        {{#each ingredients}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+      </select>
+    </td>
+    <td>
+      <label for="ingredient_quantities" class="nomargin">Quantity:
+        <input type="text" name="ingredient_quantities">
+      </label>
+    </td>
+    <td>
+      <button type="button" onclick="this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode)">Delete</button>
+    </td>
+  </tr>  
+  </table>
+  <!--/TODO-->
+
   <form action="/addRecipe" method="POST">
     <label for="title">Title:
       <input type="text" name="title">
@@ -25,7 +50,9 @@
     <br>
     <h6>Ingredients:</h6>
     <br>
-    <button>Add Ingredient</button>
+    <table id="myTable">      
+    </table>
+    <button type="button" onclick="addIngredientToRecipe(event)">Add Ingredient</button>
     <br>
     <button type="submit">Save</button>
   </form>
