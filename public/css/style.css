@@ -10,6 +10,17 @@ body {
     margin: 0px;
 }
 
+a {
+    list-style-type: none;
+    text-decoration: none !important;
+}
+
+a.main-title {
+    font-size: 35px;
+    font-style: oblique;
+    font-weight:bold;
+}
+
 div.jumbotron {
     background-image: url('/images/Home_Background.jpg') !important;
     background-size: cover;
@@ -20,11 +31,7 @@ div.jumbotron {
     margin-bottom: 0;
    }
 
-.jumbotron, .navbar {
-    font-family: 'Handlee', cursive;
-}
-
-div.container.main {
+   div.container.main {
     padding: 50px 100px;
 }
 
@@ -33,7 +40,37 @@ div.card-body.p-5 {
     background-size: cover;
     background-repeat: no-repeat;
 }
- 
+
+.jumbotron, .navbar {
+    font-family: 'Handlee', cursive;
+}
+
 label.nomargin {
     margin-bottom: 0em
+}
+
+li {
+    color: black;
+    font-size: 30px;
+}
+ 
+.recipeInfo {
+    margin-top: 83px;
+    font-family: 'Handlee', cursive;
+    margin-left: 10px;
+}
+
+h1.recipeTitle {
+    padding-top:20px;
+}
+
+.wallpaper{
+    background-image: url('/images/recipe-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+u {
+    font-size: 35px;
+    color: black;
 }
