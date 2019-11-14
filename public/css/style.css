@@ -1,13 +1,13 @@
-
 * {
     box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
     border: 0px;
     padding: 0px;
     margin: 0px;
+    width:100%;
+    height:100%;
 }
 
 a {
@@ -18,7 +18,16 @@ a {
 a.main-title {
     font-size: 35px;
     font-style: oblique;
-    font-weight:bold;
+    font-weight: bold;
+}
+
+button#add_btn {
+    margin-top:5px;
+    margin-bottom: 10px;
+}
+
+button#save_btn{
+    margin-top: 10px;
 }
 
 div.jumbotron {
@@ -27,11 +36,10 @@ div.jumbotron {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    height:100%;
     margin-bottom: 0;
-   }
+}
 
-   div.container.main {
+div.container.main {
     padding: 50px 100px;
 }
 
@@ -39,6 +47,35 @@ div.card-body.p-5 {
     background-image: url('/images/paper_texture.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    min-height: 100%;
+}
+
+div.addRecipe {
+    background-image: url('/images/pasta-background.jpg') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 84px;
+    margin-left:0;
+    font-family: 'Handlee', cursive;
+    font-size: 25px;
+    height:auto;
+    width:100%;
+    min-height: 100%;
+}
+
+div.recipe-container {
+    margin-top:20px;
+    margin-left:10px;
+}
+
+h5#add_recipe{
+    font-size: 40px;
+    padding-top:20px;
+}
+
+h6#ingredient_title {
+    margin-top: 20px;
+    font-size: 25px;
 }
 
 .jumbotron, .navbar {
@@ -53,24 +90,34 @@ li {
     color: black;
     font-size: 30px;
 }
- 
+
 .recipeInfo {
     margin-top: 83px;
     font-family: 'Handlee', cursive;
     margin-left: 10px;
+    color:black;
+    min-height:100%;
+    width:100%;
 }
 
 h1.recipeTitle {
-    padding-top:20px;
+    padding-top: 20px;
 }
 
-.wallpaper{
+div.wallpaper {
     background-image: url('/images/recipe-background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    min-height: 100%;
+    width:100%;
 }
 
 u {
     font-size: 35px;
     color: black;
+}
+
+ul#recipe_item {
+    list-style: none;
+    padding-left: 0;
 }
