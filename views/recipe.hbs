@@ -2,11 +2,11 @@
   <div class='recipeInfo'>
     <h1 class='recipeTitle'>{{recipeInfo.title}}</h1>
     <ul id='recipe_item'> 
-      <li>Category: {{recipeInfo.category}} </li>
-      <li>Link to original recipe: <a href="{{recipeInfo.link}}" target='_blank'>{{recipeInfo.link}}</a></li>
-      <li>Notes: {{recipeInfo.notes}}</li>
+      <li><strong>Category:</strong> {{recipeInfo.category}} </li>
+      <li><strong>Link to original recipe:</strong> <a href="{{recipeInfo.link}}" target='_blank'>{{recipeInfo.link}}</a></li>
+      <li><strong>Notes:</strong> {{recipeInfo.notes}}</li>
     </ul>
-    <h4>Ingredients</h4>
+    <h4><strong>Ingredients</strong></h4>
     {{#each recipeIngredients}}
     <ul>
       <li>{{ingredient_name}} : {{ingredient_quantity}}</li>
