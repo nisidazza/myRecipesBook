@@ -25,16 +25,25 @@ a.main-title {
 button#add_btn {
     margin-top:5px;
     margin-bottom: 10px;
+    border-radius:8px;
+    padding: 3px;
+    background-color:lavender;
 }
 
 button#save_btn{
     margin-top: 10px;
+    border-radius:8px;
+    padding: 3px;
+    background-color:lavender;
 }
 
 button.del-btn {
     margin-left: 10px;
     margin-bottom: 5px;
     font-family: 'Handlee', cursive;
+    border-radius:8px;
+    padding: 3px;
+    background-color:lavender;
 }
 
 div.jumbotron {
