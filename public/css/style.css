@@ -30,6 +30,10 @@ button#add_btn {
     background-color:lavender;
 }
 
+button.btn-search {
+    background-color: lavender;
+}
+
 button#save_btn{
     margin-top: 10px;
     border-radius:8px;
@@ -92,6 +96,11 @@ h5#add_recipe{
 h6#ingredient_title {
     margin-top: 20px;
     font-size: 25px;
+}
+
+input.src-input {
+    font-size: 15px;
+    padding:20px;
 }
 
 .jumbotron, .navbar {
