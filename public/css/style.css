@@ -51,7 +51,7 @@ div.card-body.p-5 {
 }
 
 div.addRecipe {
-    background-image: url('/images/pasta-background.jpg') !important;
+    background-image: url('/images/addRecipe-background.jpg') !important;
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 84px;
@@ -59,7 +59,6 @@ div.addRecipe {
     font-family: 'Handlee', cursive;
     font-size: 25px;
     height:auto;
-    width:100%;
     min-height: 100%;
 }
 
@@ -71,6 +70,7 @@ div.recipe-container {
 h5#add_recipe{
     font-size: 40px;
     padding-top:20px;
+    font-style: oblique;
 }
 
 h6#ingredient_title {

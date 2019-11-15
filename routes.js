@@ -33,34 +33,49 @@ router.get('/recipe/:id', (req, res) => {
         })
 })
 
-router.get('/addRecipe', (req,res) => {
+router.get('/addRecipe', (req, res) => {
     db.getListIngredients()
         .then(ingredients => {
             console.log(ingredients)
-            res.render('addRecipe',{ ingredients })
-        })    
+            res.render('addRecipe', { ingredients })
+        })
 })
 
-router.post('/addRecipe', (req,res) => {
+router.post('/addRecipe', (req, res) => {
     console.log("POST addRecipe");
     console.log(req.body);
 
-    let {title} = req.body
-    let {category} = req.body
-    let {link} = req.body
-    let {notes} = req.body
-    let {ingredient_ids} = req.body
-    let {ingredient_quantities} = req.body
-    db.addRecipe(title,category,link,notes)    
-    .then(newRecipeIdArray => {
-        var newRecipeId = newRecipeIdArray[0]
-        console.log("Recipe Id" + newRecipeId)
-        db.linkRecipeIngredients(newRecipeId, ingredient_ids, ingredient_quantities)
-        .then(() => {
-            res.redirect(`/recipe/${newRecipeId}`)
-        })                
-    })
+    const { title } = req.body
+    const { category } = req.body
+    const { link } = req.body
+    const { notes } = req.body
+    const { ingredient_ids } = req.body
+    const { ingredient_quantities } = req.body
+    db.addRecipe(title, category, link, notes)
+        .then(newRecipeIdArray => {
+            var newRecipeId = newRecipeIdArray[0]
+            console.log("Recipe Id" + newRecipeId)
+            db.linkRecipeIngredients(newRecipeId, ingredient_ids, ingredient_quantities)
+                .then(() => {
+                    res.redirect(`/recipe/${newRecipeId}`)
+                })
+        })
 })
+
+router.post('/recipe/:id', (req, res) => {
+    const { id } = req.params
+    console.log(id)
+    db.deleteRecipe(id)
+        .then(() => {
+            db.getListRecipes()
+                .then(() => {
+                    res.redirect('/')
+                })
+
+        })
+})
+
+
 
 
 module.exports = router

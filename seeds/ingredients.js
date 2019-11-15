@@ -70,5 +70,32 @@ exports.seed = knex =>
                     id: 17,
                     name: 'pepper',
                 },
-
+                {
+                    id: 18,
+                    name: 'yeast',
+                },
+                {
+                    id: 19,
+                    name: 'tomato sauce',
+                },
+                {
+                    id: 20,
+                    name: 'ham',
+                },
+                {
+                    id: 21,
+                    name: 'mozzarella',
+                },
+                {
+                    id: 22,
+                    name: 'king prawns',
+                },
+                {
+                    id: 23,
+                    name: 'basil',
+                },
+                {
+                    id: 24,
+                    name: 'water',
+                },
             ]))

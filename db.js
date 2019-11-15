@@ -59,6 +59,15 @@ function linkRecipeIngredients(newRecipeId, ingredient_ids, ingredient_quantitie
         .insert(newRows)
 }
 
+function deleteRecipe(id, db=connection) {
+    return db('recipes')
+    .where('id', id).first()
+    .delete()
+}
+
+
+
+
 module.exports = {
     getListRecipes,
     getRecipe,
@@ -66,5 +75,6 @@ module.exports = {
     addRecipe,
     addIngredients,
     linkRecipeIngredients,
-    getListIngredients
+    getListIngredients,
+    deleteRecipe,
 }
