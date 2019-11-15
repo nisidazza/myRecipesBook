@@ -8,6 +8,7 @@ html, body {
     margin: 0px;
     width:100%;
     height:100%;
+    font-family: 'Handlee', cursive;
 }
 
 a {
@@ -28,6 +29,12 @@ button#add_btn {
 
 button#save_btn{
     margin-top: 10px;
+}
+
+button.del-btn {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-family: 'Handlee', cursive;
 }
 
 div.jumbotron {
@@ -88,10 +95,10 @@ label.nomargin {
 
 li {
     color: black;
-    font-size: 30px;
+    font-size: 25px;
 }
 
-.recipeInfo {
+div.recipeInfo {
     margin-top: 83px;
     font-family: 'Handlee', cursive;
     margin-left: 10px;
