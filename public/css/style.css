@@ -99,7 +99,7 @@ h6#ingredient_title {
 }
 
 input.src-input {
-    font-size: 15px;
+    font-size: 15run devpx;
     padding:20px;
 }
 

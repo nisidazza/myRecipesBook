@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index",
-    "start": "node index"
+    "start": "node index",
+    "postinstall": "knex migrate:latest"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,8 @@
     "debug-mode": "^2.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
-    "knex": "^0.20.1"
+    "knex": "^0.20.1",
+    "pg": "^7.12.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.4",
