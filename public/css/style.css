@@ -6,8 +6,8 @@ html, body {
     border: 0px;
     padding: 0px;
     margin: 0px;
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
     font-family: 'Handlee', cursive;
 }
 
@@ -23,13 +23,13 @@ a.main-title {
 }
 
 button.btn {
-    border-radius:8px;
+    border-radius: 8px;
     padding: 3px;
-    background-color:lavender;
+    background-color: lavender;
 }
 
 button#add_btn {
-    margin-top:5px;
+    margin-top: 5px;
     margin-bottom: 10px;
 }
 
@@ -37,7 +37,7 @@ button.btn-search {
     background-color: lavender;
 }
 
-button#save_btn{
+button#save_btn {
     margin-top: 10px;
 }
 
@@ -63,9 +63,7 @@ div.addRecipe {
     background-image: url('/images/addRecipe-background.jpg') !important;
 }
 
-div.searchByIngredient {
-
-}
+div.searchByIngredient {}
 
 div.container.main {
     padding: 50px 100px;
@@ -78,9 +76,9 @@ div.card-body.p-5 {
     min-height: 100%;
 }
 
-h5#add_recipe{
+h5#add_recipe {
     font-size: 40px;
-    padding-top:20px;
+    padding-top: 20px;
     font-style: oblique;
 }
 
@@ -91,7 +89,7 @@ h6#ingredient_title {
 
 input.src-input {
     font-size: 15run devpx;
-    padding:20px;
+    padding: 20px;
 }
 
 .jumbotron, .navbar {
@@ -107,28 +105,6 @@ li {
     font-size: 25px;
 }
 
-div.recipeInfo {
-    margin-top: 83px;
-    font-family: 'Handlee', cursive;
-    margin-left: 10px;
-    color:black;
-    min-height:100%;
-    width:100%;
-}
-
-h1.recipeTitle {
-    padding-top: 20px;
-    font-style: oblique;
-}
-
-div.wallpaper {
-    background-image: url('/images/recipe-background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100%;
-    width:100%;
-}
-
 u {
     font-size: 35px;
     color: black;
@@ -138,3 +114,16 @@ ul#recipe_item {
     list-style: none;
     padding-left: 0;
 }
+
+/*#region recipe.hbs*/
+
+div.recipe {
+    background-image: url('/images/recipe-background.jpg');
+}
+
+h1.recipeTitle {
+    padding-top: 20px;
+    font-style: oblique;
+}
+
+/*#endregion recipe.hbs*/

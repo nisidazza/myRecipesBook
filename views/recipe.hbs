@@ -1,19 +1,24 @@
-<div class='wallpaper'>
-  <div class='recipeInfo'>
-    <h1 class='recipeTitle'>{{recipeInfo.title}}</h1>
-    <ul id='recipe_item'> 
-      <li><strong>Category:</strong> {{recipeInfo.category}} </li>
-      <li><strong>Link to original recipe:</strong> <a href="{{recipeInfo.link}}" target='_blank'>{{recipeInfo.link}}</a></li>
-      <li><strong>Notes:</strong> {{recipeInfo.notes}}</li>
-    </ul>
-    <h4><strong>Ingredients</strong></h4>
-    {{#each recipeIngredients}}
-    <ul>
-      <li>{{ingredient_name}} : {{ingredient_quantity}}</li>
-    </ul>
-    {{/each}}
+<div class="jumbotron recipe">
+  <div class="container main">
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5 recipe-container">
+        <h1 class='recipeTitle'>{{recipeInfo.title}}</h1>
+        <ul id='recipe_item'>
+          <li><strong>Category:</strong> {{recipeInfo.category}} </li>
+          <li><strong>Link to original recipe:</strong> <a href="{{recipeInfo.link}}"
+              target='_blank'>{{recipeInfo.link}}</a></li>
+          <li><strong>Notes:</strong> {{recipeInfo.notes}}</li>
+        </ul>
+        <h4><strong>Ingredients</strong></h4>
+        {{#each recipeIngredients}}
+        <ul>
+          <li>{{ingredient_name}} : {{ingredient_quantity}}</li>
+        </ul>
+        {{/each}}
+        <form action='/recipe/{{recipeInfo.id}}' method='post'>
+          <button class='del-btn btn' type='submit'>Delete Recipe</button>
+        </form>
+      </div>
+    </div>
   </div>
-  <form action='/recipe/{{recipeInfo.id}}' method='post'>
-    <button  class='del-btn btn' type='submit'>Delete Recipe</button>
-  </form>
 </div>
