@@ -22,12 +22,15 @@ a.main-title {
     font-weight: bold;
 }
 
-button#add_btn {
-    margin-top:5px;
-    margin-bottom: 10px;
+button.btn {
     border-radius:8px;
     padding: 3px;
     background-color:lavender;
+}
+
+button#add_btn {
+    margin-top:5px;
+    margin-bottom: 10px;
 }
 
 button.btn-search {
@@ -36,18 +39,12 @@ button.btn-search {
 
 button#save_btn{
     margin-top: 10px;
-    border-radius:8px;
-    padding: 3px;
-    background-color:lavender;
 }
 
 button.del-btn {
     margin-left: 10px;
     margin-bottom: 5px;
     font-family: 'Handlee', cursive;
-    border-radius:8px;
-    padding: 3px;
-    background-color:lavender;
 }
 
 div.jumbotron {
@@ -67,7 +64,7 @@ div.addRecipe {
 }
 
 div.searchByIngredient {
-    
+
 }
 
 div.container.main {
@@ -80,7 +77,6 @@ div.card-body.p-5 {
     background-repeat: no-repeat;
     min-height: 100%;
 }
-
 
 h5#add_recipe{
     font-size: 40px;

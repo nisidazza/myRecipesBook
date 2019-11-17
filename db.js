@@ -65,6 +65,13 @@ function deleteRecipe(id, db=connection) {
     .delete()
 }
 
+function getRecipesByIngredient(ingredientId, db=connection) {
+    return db('recipes_ingredients')
+    .innerJoin('recipes', 'recipes.id','recipes_ingredients.recipe_id')
+    .where('recipes_ingredients.ingredient_id', ingredientId)
+    .select('recipes.id', 'recipes.title')
+}
+
 
 
 
@@ -77,4 +84,5 @@ module.exports = {
     linkRecipeIngredients,
     getListIngredients,
     deleteRecipe,
+    getRecipesByIngredient
 }

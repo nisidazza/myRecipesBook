@@ -4,15 +4,23 @@
 </ul>
 {{/each}} --}}
 <div class="jumbotron searchByIngredient">
-    <div class="container main">
-        <div class="card border-0 shadow my-5">
-            <div class="card-body p-5 recipe-container">
-                <select name="form-control">
-                    {{#each ingredients}}
-                    <option value="{{this}}">{{this.name}}</option>
-                    {{/each}}
-                </select>
-            </div>
-        </div>
+  <div class="container main">
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5 recipe-container">
+        <form action="/searchByIngredient" method="POST">
+          <select name="ingredient_id">
+            {{#each ingredients}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+          </select>
+          <button class="btn" type="submit">Submit</button>
+        </form>
+        <ul>
+          {{#each recipes}}
+          <li><a href="/recipe/{{id}}" target="_blank">{{title}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
     </div>
+  </div>
 </div>
