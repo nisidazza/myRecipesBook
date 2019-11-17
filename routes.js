@@ -36,14 +36,13 @@ router.get('/recipe/:id', (req, res) => {
 router.get('/addRecipe', (req, res) => {
     db.getListIngredients()
         .then(ingredients => {
-            console.log(ingredients)
             res.render('addRecipe', { ingredients })
         })
 })
 
 router.post('/addRecipe', (req, res) => {
-    console.log("POST addRecipe");
-    console.log(req.body);
+    // console.log("POST addRecipe");
+    // console.log(req.body);
 
     const { title } = req.body
     const { category } = req.body
@@ -54,7 +53,7 @@ router.post('/addRecipe', (req, res) => {
     db.addRecipe(title, category, link, notes)
         .then(newRecipeIdArray => {
             var newRecipeId = newRecipeIdArray[0]
-            console.log("Recipe Id" + newRecipeId)
+            //console.log("Recipe Id" + newRecipeId)
             db.linkRecipeIngredients(newRecipeId, ingredient_ids, ingredient_quantities)
                 .then(() => {
                     res.redirect(`/recipe/${newRecipeId}`)
@@ -64,7 +63,7 @@ router.post('/addRecipe', (req, res) => {
 
 router.post('/recipe/:id', (req, res) => {
     const { id } = req.params
-    console.log(id)
+    //console.log(id)
     db.deleteRecipe(id)
         .then(() => {
             db.getListRecipes()
@@ -75,7 +74,13 @@ router.post('/recipe/:id', (req, res) => {
         })
 })
 
-
+router.get('/searchByIngredient', (req, res) => {
+    db.getListIngredients()
+        .then(ingredients => {
+            console.log(ingredients)
+        res.render('searchByIngredient', {ingredients})
+    })
+})
 
 
 module.exports = router

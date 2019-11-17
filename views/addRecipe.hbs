@@ -1,59 +1,62 @@
 <script src="js/addRecipe.js"></script>
+<div class="jumbotron addRecipe">
+  <div class="container main">
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5 recipe-container">
+        <h5 id='add_recipe'>Add new recipe{{foo}}</h5>
 
-<div class='addRecipe'>
-  <div class='recipe-container'>
-    <h5 id='add_recipe'>Add new recipe{{foo}}</h5>
+        <!--TODO: MOVE SOMEWHERE ELSE (maybe a template) -->
+        <table id="addNewIngredientTemplate" style="display:none">
+          <tr>
+            <td>
+              <select name="ingredient_ids">
+                {{#each ingredients}}
+                <option value="{{id}}">{{name}}</option>
+                {{/each}}
+              </select>
+            </td>
+            <td>
+              <label for="ingredient_quantities" class="nomargin">Quantity:
+                <input type="text" name="ingredient_quantities">
+              </label>
+            </td>
+            <td>
+              <button class='btn' type="button"
+                onclick="this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode)">Delete</button>
+            </td>
+          </tr>
+        </table>
+        <!--/TODO-->
 
-    <!--TODO: MOVE SOMEWHERE ELSE (maybe a template) -->
-    <table id="addNewIngredientTemplate" style="display:none">
-      <tr>
-        <td>
-          <select name="ingredient_ids">
-            {{#each ingredients}}
-            <option value="{{id}}">{{name}}</option>
-            {{/each}}
-          </select>
-        </td>
-        <td>
-          <label for="ingredient_quantities" class="nomargin">Quantity:
-            <input type="text" name="ingredient_quantities">
+        <form action="/addRecipe" method="POST">
+          <label for="title"><strong>Title: </strong>
+            <input type="text" name="title">
           </label>
-        </td>
-        <td>
-          <button class='btn' type="button"
-            onclick="this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode)">Delete</button>
-        </td>
-      </tr>
-    </table>
-    <!--/TODO-->
+          <br>
+          <label for="category"><strong>Category: </strong>
+            <select name="category">
+              <option value="sweet">Sweet</option>
+              <option value="savoury">Savoury</option>
+            </select>
+          </label>
+          <br>
+          <label for="link"><strong>Link: </strong>
+            <input type="text" name="link">
+          </label>
+          <br>
+          <label for="notes"><strong>Notes: </strong>
+            <input type="text" name="notes">
+          </label>
+          <br>
+          <h6 id='ingredient_title'><strong>Ingredients:</strong></h6>
 
-    <form action="/addRecipe" method="POST">
-      <label for="title"><strong>Title: </strong>
-        <input type="text" name="title">
-      </label>
-      <br>
-      <label for="category"><strong>Category: </strong>
-        <select name="category">
-          <option value="sweet">Sweet</option>
-          <option value="savoury">Savoury</option>
-        </select>
-      </label>
-      <br>
-      <label for="link"><strong>Link: </strong>
-        <input type="text" name="link">
-      </label>
-      <br>
-      <label for="notes"><strong>Notes: </strong>
-        <input type="text" name="notes">
-      </label>
-      <br>
-      <h6 id='ingredient_title'><strong>Ingredients:</strong></h6>
-
-      <table id="myTable">
-      </table>
-      <button id='add_btn' type="button" onclick="addIngredientToRecipe(event)">Add Ingredient</button>
-      <br>
-      <button id='save_btn' type="submit">Save</button>
-    </form>
+          <table id="myTable">
+          </table>
+          <button id='add_btn' type="button" onclick="addIngredientToRecipe(event)">Add Ingredient</button>
+          <br>
+          <button id='save_btn' type="submit">Save</button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
