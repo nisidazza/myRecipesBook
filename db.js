@@ -6,11 +6,13 @@ const connection = require('knex')(config)
 function getListRecipes(db = connection) {
     return db('recipes')
         .select()
+        .orderBy('recipes.title')
 }
 
 function getListIngredients(db = connection) {
     return db('ingredients')
         .select()
+        .orderBy('ingredients.name')
 }
 
 function getIngredients(id, db = connection) {
