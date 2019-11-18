@@ -34,6 +34,15 @@ exports.seed = knex =>
                     notes: '',
                     link: 'https://www.incredibleegg.org/recipe/basic-scrambled-eggs/'  
                 },
+                {
+                    id: 5,
+                    title: 'Brownie',
+                    category: 'sweet',
+                    is_complete: true,
+                    notes: 'add chocolate drops',
+                    link: 'https://www.chelsea.co.nz/browse-recipes/best-brownie/'  
+                },
+
 
 
             ]))

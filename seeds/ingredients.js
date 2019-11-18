@@ -126,5 +126,13 @@ exports.seed = knex =>
                     id: 31,
                     name: 'dumpling wrappers',
                 },
+                {
+                    id: 32,
+                    name: 'cocoa',
+                },
+                {
+                    id: 33,
+                    name: 'vanilla essence',
+                },
 
             ]))
