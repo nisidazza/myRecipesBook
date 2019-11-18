@@ -138,6 +138,10 @@ h1.recipeTitle {
     font-style: oblique;
 }
 
+h4 {
+    color:black;
+}
+
 button.del-btn {
     margin-left: 10px;
     margin-bottom: 5px;
