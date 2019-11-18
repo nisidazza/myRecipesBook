@@ -53,6 +53,7 @@ div.jumbotron {
     background-attachment: fixed;
     background-position: center;
     margin-bottom: 0;
+    min-height: 100%;
 }
 
 div.home {
@@ -63,7 +64,9 @@ div.addRecipe {
     background-image: url('/images/addRecipe-background.jpg') !important;
 }
 
-div.searchByIngredient {}
+div.searchByIngredient {
+    background-image: url('/images/ingredients.jpg') !important;
+}
 
 div.container.main {
     padding: 50px 100px;

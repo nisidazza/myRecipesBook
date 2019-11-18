@@ -98,4 +98,33 @@ exports.seed = knex =>
                     id: 24,
                     name: 'water',
                 },
+                {
+                    id: 25,
+                    name: 'cabbage',
+                },
+                {
+                    id: 26,
+                    name: 'pork mince',
+                },
+                {
+                    id: 27,
+                    name: 'spring onion',
+                },
+                {
+                    id: 28,
+                    name: 'soy sauce',
+                },
+                {
+                    id: 29,
+                    name: 'minced ginger',
+                },
+                {
+                    id: 30,
+                    name: 'sesame oil',
+                },
+                {
+                    id: 31,
+                    name: 'dumpling wrappers',
+                },
+
             ]))

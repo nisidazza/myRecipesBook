@@ -20,11 +20,11 @@ exports.seed = knex =>
                 },
                 {
                     id: 3,
-                    title: 'Stir-Fried Udon Noodles',
+                    title: 'Pork Dumplings',
                     category: 'savoury',
                     is_complete: true,
-                    notes: 'add shrimp paste and spring onions',
-                    link: 'https://www.foodandwine.com/recipes/stir-fried-udon-noodles'
+                    notes: 'add prawns',
+                    link: 'https://www.thekitchn.com/how-to-make-pork-dumplings-cooking-lessons-from-the-kitchn-216163'  
                 },
 
 
