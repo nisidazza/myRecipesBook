@@ -142,4 +142,29 @@ exports.seed = knex =>
                     ingredient_id: 31,
                     quantity: '1 package'
                 },
+                {
+                    recipe_id: 4,
+                    ingredient_id: 5,
+                    quantity: '4'
+                },
+                {
+                    recipe_id: 4,
+                    ingredient_id: 6,
+                    quantity: '1/4 cup'
+                },
+                {
+                    recipe_id: 4,
+                    ingredient_id: 10,
+                    quantity: '2 tablespoons'
+                },
+                {
+                    recipe_id: 4,
+                    ingredient_id: 4,
+                    quantity: 'q.s'
+                },
+                {
+                    recipe_id: 4,
+                    ingredient_id: 17,
+                    quantity: 'q.s'
+                },
             ]))

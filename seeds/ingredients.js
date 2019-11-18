@@ -20,7 +20,7 @@ exports.seed = knex =>
                 },
                 {
                     id: 5,
-                    name: 'egg',
+                    name: 'eggs',
                 },
                 {
                     id: 6,

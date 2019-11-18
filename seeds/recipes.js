@@ -26,6 +26,14 @@ exports.seed = knex =>
                     notes: 'add prawns',
                     link: 'https://www.thekitchn.com/how-to-make-pork-dumplings-cooking-lessons-from-the-kitchn-216163'  
                 },
+                {
+                    id: 4,
+                    title: 'Scrambled eggs',
+                    category: 'savoury',
+                    is_complete: true,
+                    notes: '',
+                    link: 'https://www.incredibleegg.org/recipe/basic-scrambled-eggs/'  
+                },
 
 
             ]))
