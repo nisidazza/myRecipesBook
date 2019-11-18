@@ -41,12 +41,6 @@ button#save_btn {
     margin-top: 10px;
 }
 
-button.del-btn {
-    margin-left: 10px;
-    margin-bottom: 5px;
-    font-family: 'Handlee', cursive;
-}
-
 div.jumbotron {
     background-size: cover;
     background-repeat: no-repeat;
@@ -60,13 +54,7 @@ div.home {
     background-image: url('/images/Home_Background.jpg') !important;
 }
 
-div.addRecipe {
-    background-image: url('/images/addRecipe-background.jpg') !important;
-}
 
-div.searchByIngredient {
-    background-image: url('/images/ingredients.jpg') !important;
-}
 
 div.container.main {
     padding: 50px 100px;
@@ -79,11 +67,6 @@ div.card-body.p-5 {
     min-height: 100%;
 }
 
-h5#add_recipe {
-    font-size: 40px;
-    padding-top: 20px;
-    font-style: oblique;
-}
 
 h6#ingredient_title {
     margin-top: 20px;
@@ -91,7 +74,7 @@ h6#ingredient_title {
 }
 
 input.src-input {
-    font-size: 15run devpx;
+    font-size: 15;
     padding: 20px;
 }
 
@@ -113,10 +96,36 @@ u {
     color: black;
 }
 
-ul#recipe_item {
+ul#recipe_item,
+ul#search_ingredient {
     list-style: none;
     padding-left: 0;
 }
+
+/*#region addRecipe.hbs*/
+
+div.addRecipe {
+    background-image: url('/images/addRecipe-background.jpg') !important;
+}
+
+h5#add_recipe {
+    font-size: 40px;
+    padding-top: 20px;
+    font-style: oblique;
+}
+
+/*#endregion addRecipe.hbs*/
+
+
+
+/*#region searchByIngredient.hbs*/
+
+div.searchByIngredient {
+    background-image: url('/images/ingredients.jpg') !important;
+}
+
+/*#endregion searchByIngredient.hbs*/
+
 
 /*#region recipe.hbs*/
 
@@ -127,6 +136,12 @@ div.recipe {
 h1.recipeTitle {
     padding-top: 20px;
     font-style: oblique;
+}
+
+button.del-btn {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-family: 'Handlee', cursive;
 }
 
 /*#endregion recipe.hbs*/
