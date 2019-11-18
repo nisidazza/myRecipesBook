@@ -9,11 +9,18 @@
         <table id="addNewIngredientTemplate" style="display:none">
           <tr>
             <td>
-              <select name="ingredient_ids">
+              <select name="ingredient_ids" id="ingredient_ids" style="display:inline">
                 {{#each ingredients}}
                 <option value="{{id}}">{{name}}</option>
                 {{/each}}
               </select>
+            </td>
+            <td>
+              <input type="text" name="new_ingredients" style='display:none' id="new_ingredients">
+            </td>
+            <td>
+              <button id="btn_toggleNewIngredient" class="btn" type="button" onclick="toggleNewIngredient(event)">New
+                Ingredient</button>
             </td>
             <td>
               <label for="ingredient_quantities" class="nomargin">Quantity:
