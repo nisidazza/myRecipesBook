@@ -10,7 +10,7 @@
         <form action="/searchByIngredient" method="POST">
           <select name="ingredient_id">
             {{#each ingredients}}
-            <option value="{{id}}">{{name}}</option>
+            <option value="{{id}}" {{#ifeq id @root.selectedIngredientId}} selected="selected" {{/ifeq}} >{{name}}</option>
             {{/each}}
           </select>
           <button class="btn" type="submit">Search</button>

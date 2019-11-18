@@ -1,6 +1,7 @@
 const express = require('express')
 const hbs = require('express-handlebars')
 const bodyParser = require('body-parser')
+const myhelpers = require('./handlebars-helpers.js')
 
 const routes = require('./routes')
 
@@ -11,6 +12,7 @@ const server = express()
 server.engine('hbs', hbs({
     extname: 'hbs',
     defaultLayout: 'main',
+    helpers: myhelpers
 }))
 server.set('view engine', 'hbs')
 

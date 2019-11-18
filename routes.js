@@ -26,7 +26,7 @@ router.get('/recipe/:id', (req, res) => {
             db.getIngredients(id)
                 .then(ingredients => {
                     recipeIngredients = ingredients
-                    res.render('recipe', { recipeInfo, recipeIngredients })
+                    res.render('recipe', { recipeInfo, recipeIngredients})
                     // console.log(recipeInfo)
                     // console.log(recipeIngredients)
                 })
@@ -90,8 +90,9 @@ router.post('/searchByIngredient', (req, res) => {
             const { ingredient_id } = req.body
             db.getRecipesByIngredient(ingredient_id)
             .then(recipes => {
-                console.log(recipes)
-                res.render('searchByIngredient', { ingredients, recipes })
+                const request = { ingredients, recipes, selectedIngredientId : ingredient_id };
+                console.log(request)
+                res.render('searchByIngredient', request)
             })
         })
 })
