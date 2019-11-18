@@ -37,12 +37,18 @@ function addRecipe(title, category, link, notes, db = connection) {
         })
 }
 
-function addIngredients(name, db = connection) {
-    return db('ingredients')
-        .insert({ name })
-}
+async function linkRecipeIngredients(newRecipeId, ingredient_ids, ingredient_quantities, new_ingredients, db = connection) {    
+    for(let i=0; i<new_ingredients.length; i++) {
+        let name =  new_ingredients[i].trim()
+        if(name != "") {
+            await db('ingredients')
+                .insert({ name })
+                .then(id => {
+                    ingredient_ids[i] = id[0]
+                })                
+        }
+    }
 
-function linkRecipeIngredients(newRecipeId, ingredient_ids, ingredient_quantities, db = connection) {
     var newRows = []
 
     for(var i=0;i<ingredient_ids.length;i++){
@@ -52,8 +58,6 @@ function linkRecipeIngredients(newRecipeId, ingredient_ids, ingredient_quantitie
             quantity : ingredient_quantities[i]
         })
     }
-
-    console.log(newRows)
 
     return db('recipes_ingredients')
         .insert(newRows)
@@ -80,7 +84,6 @@ module.exports = {
     getRecipe,
     getIngredients,
     addRecipe,
-    addIngredients,
     linkRecipeIngredients,
     getListIngredients,
     deleteRecipe,
