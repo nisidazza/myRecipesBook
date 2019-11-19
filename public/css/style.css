@@ -99,6 +99,7 @@ li.list {
 
 }
 
+a.list:hover,
 li.list:hover {
     color: brown; 
     font-weight: bold;
