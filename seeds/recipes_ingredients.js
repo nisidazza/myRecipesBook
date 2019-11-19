@@ -197,4 +197,59 @@ exports.seed = knex =>
                     ingredient_id: 3,
                     quantity: '1 tablespoon'
                 },
+                {
+                    recipe_id: 6,
+                    ingredient_id: 24,
+                    quantity: '250ml'
+                },
+                {
+                    recipe_id: 6,
+                    ingredient_id: 18,
+                    quantity: '5gr'
+                },
+                {
+                    recipe_id: 6,
+                    ingredient_id: 1,
+                    quantity: '350gr'
+                },
+                {
+                    recipe_id: 6,
+                    ingredient_id: 4,
+                    quantity: '25gr'
+                },
+                {
+                    recipe_id: 6,
+                    ingredient_id: 2,
+                    quantity: '1 teaspoon sugar'
+                },
+                {
+                    recipe_id: 6,
+                    ingredient_id: 7,
+                    quantity: '1 tablespoon'
+                },
+                {
+                    recipe_id: 6,
+                    ingredient_id: 21,
+                    quantity: '500gr'
+                },
+                {
+                    recipe_id: 6,
+                    ingredient_id: 20,
+                    quantity: '100gr'
+                },
+                {
+                    recipe_id: 6,
+                    ingredient_id: 12,
+                    quantity: '2'
+                },
+                {
+                    recipe_id: 6,
+                    ingredient_id: 34,
+                    quantity: 'q.s'
+                },
+                {
+                    recipe_id: 6,
+                    ingredient_id: 23,
+                    quantity: 'q.s'
+                },
             ]))

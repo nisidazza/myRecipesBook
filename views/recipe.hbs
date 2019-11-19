@@ -2,14 +2,14 @@
   <div class="container main">
     <div class="card border-0 shadow my-5">
       <div class="card-body p-5 recipe-container">
-        <h1 class='recipeTitle'>{{recipeInfo.title}}</h1>
+        <h1 class="main-title">{{recipeInfo.title}}</h1>
         <ul id='recipe_item'>
           <li><strong>Category:</strong> {{recipeInfo.category}} </li>
           <li><strong>Link to original recipe:</strong> <a href="{{recipeInfo.link}}"
               target='_blank'>{{recipeInfo.link}}</a></li>
           <li><strong>Notes:</strong> {{recipeInfo.notes}}</li>
         </ul>
-        <h4><strong>Ingredients</strong></h4>
+        <h6><strong>Ingredients</strong></h6>
         {{#each recipeIngredients}}
         <ul>
           <li>{{ingredient_name}} : {{ingredient_quantity}}</li>

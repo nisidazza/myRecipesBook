@@ -2,11 +2,11 @@
     <div class="container main">
         <div class="card border-0 shadow my-5">
             <div class="card-body p-5">
-                <h1 class="font-weight-light"><u>Recipes List</u></h1>
-                <ul>
+                <h1 class="main-title"><u>Recipes List</u></h1>
+                <ul class="main-title">
                     {{#each recipes}}
                     <a href='/recipe/{{id}}'>
-                        <li>{{title}}</li>
+                        <li class="list">{{title}}</li>
                     </a>
                     {{/each}}
                 </ul>

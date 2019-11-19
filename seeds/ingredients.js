@@ -134,5 +134,9 @@ exports.seed = knex =>
                     id: 33,
                     name: 'vanilla essence',
                 },
+                {
+                    id: 34,
+                    name: 'oregano',
+                },
 
             ]))

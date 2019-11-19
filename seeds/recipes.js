@@ -42,6 +42,15 @@ exports.seed = knex =>
                     notes: 'add chocolate drops',
                     link: 'https://www.chelsea.co.nz/browse-recipes/best-brownie/'  
                 },
+                {
+                    id: 6,
+                    title: 'Pizza',
+                    category: 'savoury',
+                    is_complete: true,
+                    notes: '',
+                    link: 'https://www.simplyrecipes.com/recipes/homemade_pizza/'  
+                },
+
 
 
 
