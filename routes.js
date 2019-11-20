@@ -56,7 +56,9 @@ router.post('/addRecipe', (req, res) => {
         .then(newRecipeIdArray => {
             var newRecipeId = newRecipeIdArray[0]
             console.log("Recipe Id" + newRecipeId)
-            if (ingredient_ids && ingredient_ids.length > 0)
+            console.log("ingredient_ids " + ingredient_ids)
+            console.log("new_ingredients " + new_ingredients)
+            if (ingredient_ids !== undefined && ingredient_ids !== null && ingredient_ids.length > 0)
             {
                 console.log("2 - Recipe Id" + newRecipeId)
                 db.linkRecipeIngredients(newRecipeId, ingredient_ids, ingredient_quantities, new_ingredients)
