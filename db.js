@@ -36,7 +36,7 @@ function addRecipe(title, category, link, notes, db = connection) {
             category,
             link,
             notes
-        })
+        }, 'id')
 }
 
 async function linkRecipeIngredients(newRecipeId, ingredient_ids, ingredient_quantities, new_ingredients, db = connection) {    
@@ -44,7 +44,7 @@ async function linkRecipeIngredients(newRecipeId, ingredient_ids, ingredient_qua
         let name =  new_ingredients[i].trim()
         if(name != "") {
             await db('ingredients')
-                .insert({ name })
+                .insert({ name }, 'id')
                 .then(id => {
                     ingredient_ids[i] = id[0]
                 })                
