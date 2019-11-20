@@ -58,17 +58,10 @@ router.post('/addRecipe', (req, res) => {
             console.log("Recipe Id" + newRecipeId)
             console.log("ingredient_ids " + ingredient_ids)
             console.log("new_ingredients " + new_ingredients)
-            if (new_ingredients !== undefined && new_ingredients !== null && ingredient_ids.length > 0)
-            {
-                console.log("2 - Recipe Id" + newRecipeId)
-                db.linkRecipeIngredients(newRecipeId, ingredient_ids, ingredient_quantities, new_ingredients)
-                .then(() => {
-                    res.redirect(`/recipe/${newRecipeId}`)
-                })
-            }else{
-                console.log("3 - Recipe Id" + newRecipeId)
+            db.linkRecipeIngredients(newRecipeId, ingredient_ids, ingredient_quantities, new_ingredients)
+            .then(() => {
                 res.redirect(`/recipe/${newRecipeId}`)
-            }
+            })
         })
 })
 

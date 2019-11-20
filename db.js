@@ -40,25 +40,30 @@ function addRecipe(title, category, link, notes, db = connection) {
 }
 
 async function linkRecipeIngredients(newRecipeId, ingredient_ids, ingredient_quantities, new_ingredients, db = connection) {    
-    for(let i=0; i<new_ingredients.length; i++) {
-        let name =  new_ingredients[i].trim()
-        if(name != "") {
-            await db('ingredients')
-                .insert({ name }, 'id')
-                .then(id => {
-                    ingredient_ids[i] = id[0]
-                })                
+    if (new_ingredients){
+        for(let i=0; i<new_ingredients.length; i++) {
+            let name =  new_ingredients[i].trim()
+            if(name != "") {
+                await db('ingredients')
+                    .insert({ name }, 'id')
+                    .then(id => {
+                        ingredient_ids[i] = id[0]
+                    })                
+            }
         }
     }
 
+
     var newRows = []
 
-    for(var i=0;i<ingredient_ids.length;i++){
-        newRows.push({
-            recipe_id : newRecipeId,
-            ingredient_id : ingredient_ids[i],
-            quantity : ingredient_quantities[i]
-        })
+    if (ingredient_ids){
+        for(var i=0;i<ingredient_ids.length;i++){
+            newRows.push({
+                recipe_id : newRecipeId,
+                ingredient_id : ingredient_ids[i],
+                quantity : ingredient_quantities[i]
+            })
+        }
     }
 
     return db('recipes_ingredients')
