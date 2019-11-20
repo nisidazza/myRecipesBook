@@ -56,10 +56,13 @@ router.post('/addRecipe', (req, res) => {
         .then(newRecipeIdArray => {
             var newRecipeId = newRecipeIdArray[0]
             //console.log("Recipe Id" + newRecipeId)
-            db.linkRecipeIngredients(newRecipeId, ingredient_ids, ingredient_quantities, new_ingredients)
+            if (ingredient_ids && ingredient_ids.length > 0)
+            {
+                db.linkRecipeIngredients(newRecipeId, ingredient_ids, ingredient_quantities, new_ingredients)
                 .then(() => {
                     res.redirect(`/recipe/${newRecipeId}`)
                 })
+            }
         })
 })
 
