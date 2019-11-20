@@ -50,8 +50,6 @@ exports.seed = knex =>
                     notes: '',
                     link: 'https://www.simplyrecipes.com/recipes/homemade_pizza/'  
                 },
-
-
-
-
-            ]))
+            ]).then(()=> {
+                knex.raw('SELECT setval("ingredients_id_seq", (SELECT MAX(id) from "test"))')                
+            }))

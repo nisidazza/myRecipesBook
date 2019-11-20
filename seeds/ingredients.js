@@ -138,5 +138,7 @@ exports.seed = knex =>
                     id: 34,
                     name: 'oregano',
                 },
-
-            ]))
+            ])
+            .then(()=> {
+                knex.raw('SELECT setval("ingredients_id_seq", (SELECT MAX(id) from "test"))')                
+            }))
