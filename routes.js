@@ -62,6 +62,8 @@ router.post('/addRecipe', (req, res) => {
                 .then(() => {
                     res.redirect(`/recipe/${newRecipeId}`)
                 })
+            }else{
+                res.redirect(`/recipe/${newRecipeId}`)
             }
         })
 })
